@@ -13,7 +13,7 @@ gem "slim-rails", "~> 4.0"
 group :development, :test do
   gem "dotenv-rails", "~> 3.2"
   gem "byebug"
-  gem "rspec-rails", "~> 6.1"
+  gem "rspec-rails", "~> 8.0"
 end
 
 group :development do
