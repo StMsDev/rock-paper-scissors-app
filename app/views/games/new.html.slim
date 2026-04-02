@@ -1,0 +1,15 @@
+.container
+  h1.title = t(".game_title")
+  p.description = t(".description")
+  h2.subtitle = t(".select_bet")
+
+  .throws
+    - Game::VALID_THROWS.each do |throw_name|
+      button.throw-btn data-throw=throw_name type="button"
+        = image_tag "#{throw_name}.svg", alt: t("rps_game.throws.#{throw_name}"), class: "throw-icon"
+        span.throw-label = t("rps_game.throws.#{throw_name}")
+
+= render "games/waiting_modal"
+= render "games/result_modal"
+
+#game-data data-throw-icons=game_throw_icons_json data-play-url=play_path data-i18n=game_i18n_json

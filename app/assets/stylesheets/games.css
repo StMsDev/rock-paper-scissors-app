@@ -1,0 +1,232 @@
+/* Reset & Global */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #FFFFFF;
+  min-height: 100vh;
+}
+
+/* Main content container, centered with top padding */
+.container {
+  max-width: 754px;
+  margin: 0 auto;
+  padding: 128px 20px 40px;
+}
+
+/* Page heading */
+.title {
+  max-width: 738px;
+  width: 100%;
+  text-align: left;
+  font: normal normal 500 50px/61px Montserrat, sans-serif;
+  letter-spacing: 0px;
+  color: #36006C;
+  margin-bottom: 43px;
+}
+
+/* Introductory paragraph below the title */
+.description {
+  max-width: 754px;
+  width: 100%;
+  text-align: left;
+  font: normal normal 300 21px/32px Roboto, sans-serif;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 0.54;
+  margin-bottom: 35px;
+}
+
+/* "Select your bet" label above the throw buttons */
+.subtitle {
+  text-align: center;
+  font: normal normal 500 21px/25px Montserrat, sans-serif;
+  letter-spacing: 0px;
+  color: #000000;
+  margin-bottom: 41px;
+}
+
+/* Row of rock/paper/scissors throw buttons */
+.throws {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Individual throw button (rock, paper, or scissors) */
+.throw-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  width: 240px;
+  max-width: calc((100% - 32px) / 3);
+  height: 273px;
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 20px 10px;
+  transition: background 0.15s ease;
+}
+
+.throw-btn:hover {
+  background: #F8F8F8;
+}
+
+/* Default throw icon sizing */
+.throw-icon {
+  width: auto;
+  height: auto;
+}
+
+/* Per-throw icon dimensions to match SVG aspect ratios */
+.throw-btn[data-throw="rock"] .throw-icon {
+  width: 63px;
+  height: 139px;
+}
+
+.throw-btn[data-throw="paper"] .throw-icon {
+  width: 69px;
+  height: 161px;
+}
+
+.throw-btn[data-throw="scissors"] .throw-icon {
+  width: 63px;
+  height: 160px;
+}
+
+/* Label beneath each throw icon */
+.throw-label {
+  text-align: center;
+  font: normal normal 500 24px/29px Montserrat, sans-serif;
+  letter-spacing: 0px;
+  color: #36006C;
+}
+
+/* Full-screen semi-transparent backdrop for modals */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+/* Base modal card (used by both waiting and result modals) */
+.modal {
+  width: 879px;
+  max-width: calc(100% - 40px);
+  min-height: 492px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 40px #0000001A;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 30px;
+}
+
+/* Narrower variant for the result modal */
+.modal--result {
+  width: 492px;
+  max-width: calc(100% - 40px);
+  min-height: 591px;
+}
+
+.modal--result .modal-title {
+  margin-top: 41px;
+}
+
+/* Modal heading (e.g. "You Win!", "Waiting...") */
+.modal-title {
+  text-align: center;
+  font: normal normal 500 32px/39px Montserrat, sans-serif;
+  letter-spacing: 0px;
+  color: #36006C;
+  margin-top: 41px;
+}
+
+/* Outcome explanation text in the result modal */
+.result-description {
+  text-align: center;
+  font: normal normal 300 21px/32px Roboto, sans-serif;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 0.54;
+  margin-top: 18px;
+}
+
+/* Winning throw icon displayed in the result modal */
+.result-icon {
+  width: 69px;
+  height: 161px;
+  margin-top: 69px;
+}
+
+/* "OK" dismiss button in the result modal */
+.ok-btn {
+  width: 352px;
+  max-width: 100%;
+  height: 73px;
+  background: #36006C;
+  border: none;
+  border-radius: 5px;
+  color: #FFFFFF;
+  font: normal normal 500 21px/25px Montserrat, sans-serif;
+  letter-spacing: 0px;
+  cursor: pointer;
+  margin-top: 31px;
+}
+
+.ok-btn:hover {
+  background: #2a0054;
+}
+
+/* Waiting modal: player throw vs server loader side by side */
+.waiting-content {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 80px;
+  width: 100%;
+  margin-top: 48px;
+}
+
+/* Columns for the player's throw and the server's loader */
+.waiting-player,
+.waiting-server {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+}
+
+/* Player's chosen throw icon in the waiting modal */
+.waiting-player .throw-icon {
+  width: 63px;
+  height: 139px;
+}
+
+/* Animated loading indicator */
+.loader-icon {
+  width: 64px;
+  height: 10px;
+}
+
+/* Curb logo shown under the server loader */
+.curb-logo {
+  width: 76px;
+  height: 24px;
+}

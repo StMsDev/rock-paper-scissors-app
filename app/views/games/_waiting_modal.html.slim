@@ -1,0 +1,10 @@
+#waiting-modal.modal-overlay hidden=true
+  .modal
+    h2.modal-title = t(".waiting.title")
+    .waiting-content
+      .waiting-player
+        img#waiting-player-icon.throw-icon src="" alt=""
+        span.throw-label = t(".waiting.your_bet")
+      .waiting-server
+        = image_tag "loader.svg", alt: t(".waiting.loading"), class: "loader-icon"
+        = image_tag "curb_logo.png", alt: t(".waiting.curb"), class: "curb-logo"

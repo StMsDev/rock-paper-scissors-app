@@ -1,31 +1,39 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
 en:
-  hello: "Hello world"
+  layouts:
+    application:
+      title: "Rock Paper Scissors App"
+  games:
+    new:
+      game_title: "ROCK - PAPER - SCISSORS"
+      description: >
+        Rock Paper Scissors is a zero sum game that is usually played
+        by two people using their hands and no tools. The idea is to
+        make shapes with an outstretched hand where each shape will
+        have a certain degree of power and will lead to an outcome.
+      select_bet: "SELECT YOUR BET"
+    waiting_modal:
+      waiting:
+        title: "WAITING CURB'S CHOOSE"
+        your_bet: "Your bet"
+        loading: "Loading"
+        curb: "Curb"
+    result_modal:
+      result:
+        icon_alt: "Game Result"
+        ok: "Ok"
+  rps_game:
+    throws:
+      rock: "Rock"
+      paper: "Paper"
+      scissors: "Scissors"
+    javascript:
+      results:
+        win: "YOU WON!"
+        lose: "YOU LOST!"
+        tie: "IT'S A TIE!"
+      result_verbs:
+        win: " loses"
+        lose: " wins"
+        tie: " ties"
+      errors:
+        general: "Something went wrong. Please try again."
